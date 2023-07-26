@@ -1,3 +1,5 @@
+Set-up Client for the Lapicide Shop of Emilie Vizcano by Dokryptos
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
