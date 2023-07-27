@@ -14,3 +14,52 @@ body{
     flex-wrap: wrap;
     width: 45vw;
 }
+
+@media (max-width: 600px) and (min-width: 300px){
+    .about{
+        width: 90vw;
+        padding: 0em 1em;
+        font-size: 20px;
+        letter-spacing: 0.2px;
+    }
+    .inputText{
+        font-family: 'Lapicide';
+        text-align: center;
+        outline: none;
+        height: auto;
+        padding: 0.5em 1em 1em;
+    }
+    .input-font{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 0 3vh;
+    }
+
+    .input-fontSize, .input-spacingLetter{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .input-fontSize p{
+        margin-right: 1.7em;
+    }
+    .input-fontSize input , .input-spacingLetter input {
+        margin-left: 2em;
+        width: 18em;
+        background-color: black;
+        appearance: none;
+        height: 1px; 
+        background: black; 
+    }
+    .input-fontSize input::-webkit-slider-thumb , .input-spacingLetter input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #949494;
+        cursor: pointer;
+    }
+}

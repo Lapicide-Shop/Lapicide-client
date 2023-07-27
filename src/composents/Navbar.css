@@ -4,21 +4,23 @@
     nav{
         position: fixed;
         background-color: #F5F5F5;
-        padding: 1em;
     }
     .closeNav{
         display: none;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background-color: #F5F5F5;
-        padding: 1rem;
-        z-index: 1;
-        transition: all 0.5s ease-in-out;
     }
-    .openNav{
+    .openNav {
         display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 5em;
+        margin: 0;
+        z-index: 1;
         transform: translateX(10%);
+        height: 100vh;
+        width: 100vw;
+        background-color: #F5F5F5;
         transition:  0.3s ease-in-out;
     }
     .nav-Link li{
@@ -41,7 +43,7 @@
     .navbar-burger{
         display: block;
         position: absolute;
-        top: 2em;
+        top: 2.5em;
         right: 2em;
         cursor: pointer;
         padding: 0;
@@ -55,8 +57,8 @@
     .burger-bar,
     .burger-bar::before{
         display: block;
-        width: 30px;
-        height: 1.5px;
+        width: 25px;
+        height: 0.5px;
         position: relative;
         background-color: black;
         transition: all 0.1s ease-in-out;
