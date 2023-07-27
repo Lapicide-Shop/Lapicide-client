@@ -9,6 +9,7 @@ import image7 from '../assets/lapicide7.png'
 import image8 from '../assets/lapicide8.png'
 import image9 from '../assets/lapicide9.png'
 import image10 from '../assets/lapicide10.png'
+import "../composents/Carrousel.css"
 
 
 const Carrousel = () => {
@@ -29,15 +30,16 @@ const Carrousel = () => {
 
 
     return(
-        <div className="carrousel relative">
-            <div>
+        <div className="carrousel-div">
+            <div className="carrousel">
                 <img className="carrousel-image" src={images[currentImageIndex]} alt={`Image ${currentImageIndex +1}`} /> 
             </div>
-            <div>
-                <a className="carrousel-btn " onClick={prevImage}>PREVIOUS</a>
+            <div className="carrousel-btn">
+                <a onClick={prevImage}>PREVIOUS</a>
                 <p>{currentImageIndex +1}/10</p>
                 <a  onClick={nextImage}>NEXT</a>
             </div>
+            <hr/>
         </div>
     )
     

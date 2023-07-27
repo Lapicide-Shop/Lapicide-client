@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import arrow from '../assets/arrow.png'
+import './Navbar.css'
+import classNames from "classnames";
 function Navbar(){
     const [openMenu, setOpenMenu] = useState(false)
 
@@ -11,44 +13,53 @@ function Navbar(){
     const closeMenu = () => {
         setOpenMenu(false)
     }
-
     return(
+        <>
+        <nav className={`${openMenu ? 'openNav' : 'closeNav'}`}>
         <div>
-        <hr/>
-            <div>
-                <div className="sm: hidden">
-                    <button className="block text-white p-2 focus:outline-none" onClick={handleOpenMenu}>
-                        <span className=""></span>
-                    </button>
+                <div className="nav-Link">
+                    <Link to='/' onClick={closeMenu}>
+                        <li>TEST</li>
+                    </Link>
+                    <Link to='/about' onClick={closeMenu}>
+                        <li>ABOUT</li>
+                    </Link>
+                    <Link to='/shop' onClick={closeMenu}>
+                        <li>SHOP</li>
+                    </Link>
                 </div>
-                <nav>
-                    <ul>
-                        <div>
-                            <Link to='/' onClick={closeMenu}>
-                                <li>TEST</li>
-                            </Link>
-                            <Link to='/about' onClick={closeMenu}>
-                                <li>ABOUT</li>
-                            </Link>
-                            <Link to='/shop' onClick={closeMenu}>
-                                <li>SHOP</li>
-                            </Link>
+                <div className="social-link">
+                    
+                        <Link to="https://www.instagram.com/emilievizcano/">
+                        <div className="social">
+                            <img className="arrow-nav" src={arrow} alt="arrow-list"/>
+                            <li>INSTAGRAM</li>
                         </div>
-                        <div>
-                            <Link to="https://www.instagram.com/emilievizcano/">
-                                <li>INSTAGRAM</li>
-                            </Link>
-                            <Link to="https://twitter.com/sen_vz">
-                                <li>TWITTER</li>
-                            </Link>
-                            <Link to="https://emilievizcano.com/">
-                                <li>WEBSITE</li>
-                            </Link>
+                        </Link>
+                    
+                        <Link to="https://twitter.com/sen_vz">
+                        <div className="social">
+                            <img  className="arrow-nav" src={arrow} alt="arrow-list"/>
+                            <li>TWITTER</li>
+                        </div>    
+                        </Link>
+                    
+                        <Link to="https://emilievizcano.com/">
+                        <div className="social">
+                            <img className="arrow-nav" src={arrow} alt="arrow-list"/>
+                            <li>WEBSITE</li>
                         </div>
-                    </ul>
-                </nav>
-            </div>
+                        </Link>
+                    
+                </div>
+
         </div>
+        </nav>
+        <button  className={classNames ("navbar-burger", {'open': openMenu})} onClick={handleOpenMenu}>
+            <span className="burger-bar"></span>
+        </button>
+      
+      </>
     )
 }
 

@@ -1,7 +1,7 @@
 
 function About(){
     return(
-        <div>
+        <div className="about">
             <p>
              Introducing "Lapicide," 
              a serif typeface that draws inspiration from the art of stone engraving and the skillful craftsmanship of stonecutters.

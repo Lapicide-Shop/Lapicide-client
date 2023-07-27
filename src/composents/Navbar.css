@@ -1,0 +1,76 @@
+
+
+@media (max-width: 600px) and (min-width: 300px){
+    nav{
+        position: fixed;
+        background-color: #F5F5F5;
+        padding: 1em;
+    }
+    .closeNav{
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #F5F5F5;
+        padding: 1rem;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+    }
+    .openNav{
+        display: block;
+        transform: translateX(10%);
+        transition:  0.3s ease-in-out;
+    }
+    .nav-Link li{
+        list-style-type: square;
+        list-style-type: style color #949494;
+    }
+    .arrow-nav{
+        width: 15px;
+        height: 15px;
+        margin-right: 0.5em;
+    }
+
+    .social{
+        display: flex;
+    }
+    .social li{
+        list-style: none;
+    }
+
+    .navbar-burger{
+        display: block;
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        cursor: pointer;
+        padding: 0;
+        border: 0;
+    }
+
+    .navbar-burger.open{
+        position: fixed;
+        z-index: 2;
+    }
+    .burger-bar,
+    .burger-bar::before{
+        display: block;
+        width: 30px;
+        height: 1.5px;
+        position: relative;
+        background-color: black;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .burger-bar::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        transform: rotate(90deg);
+    }
+
+    .navbar-burger.open .burger-bar{
+        transform: rotate(45deg);
+    }
+
+}

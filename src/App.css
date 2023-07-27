@@ -1,3 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+    font-family: 'Lapicide';
+    src: url('./assets/Lapicide-Light.woff2') ;
+}
+
+body{
+    background-color: #F5F5F5;
+}
+
+.about{
+    font-family: "Lapicide";
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 45vw;
+}

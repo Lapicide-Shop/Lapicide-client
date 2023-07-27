@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Lapicide';
+    src: url('../assets/Lapicide-Light.woff2') ;
+}
+
+.btn-header{
+    background-color: black;
+    color: white;
+    margin-top: 0.5em;
+    padding: 1.5em 4em;
+    border-radius: 5em;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    align-items: center;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0em 1.8em;
+}
+.hr-header{
+    display: block;
+    width: 100vw;
+    background-color: black;
+    margin-bottom: 3vh;
+}
+.lapicide{
+    font-family: 'Lapicide', sans-serif;
+    font-weight: 100;
+    font-size: 26px;   
+}
+.author-name{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+}

@@ -1,21 +1,24 @@
 import { Link } from "react-router-dom"
-
+import "./Header.css"
 function Header(){
     return(
-        <div>
+        <>
+        <div className="header">
             <div>
-                <h2>EMILIE VIZCANO</h2>
+                <h2 className="author-name">EMILIE VIZCANO</h2>
             </div>
             <div>
-                <h1>LAPICIDE</h1>
+                <h1 className="lapicide">LAPICIDE</h1>
             </div>
-            <div>
+            <div >
                 <Link to="/shop">
-                    <button>BUY THE FONT</button>
+                    <button className="btn-header">BUY THE FONT</button>
                 </Link>
             </div>
-            <hr/>
+            
         </div>
+        <hr className="hr-header"/>
+        </>
     )
 }
 
