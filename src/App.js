@@ -8,14 +8,13 @@ import Header from "./composents/Header"
 import Homepage from "./pages/Homepage"
 import About from "./pages/About"
 import Shop from "./pages/Shop"
-import Carrousel from './composents/Carrousel';
 
 function App() {
 
   return (
     <div>
       <Header />
-      <Carrousel />
+
       <Routes>
         <Route path='/' element={<Homepage/>} />
         <Route path='/about' element={<About /> } />

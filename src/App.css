@@ -6,22 +6,55 @@
 body{
     background-color: #F5F5F5;
 }
-
 .about{
+    display: flex;
+    flex-direction: row;
+}
+.about-text{
     font-family: "Lapicide";
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 45vw;
+    font-size: 25px;
+}
+
+.radio-option.selected{
+    text-decoration: underline;
+}
+.popUp-info{
+    display: none;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10em;
+    height: 5em;
+    justify-content: center;
+    align-items: center;
+}
+.info-btn{
+    width: 15px;
+    height: 15px;
+    margin-left: 0.5em;
+}
+.info-btn:hover .popUp-info{
+    display: block;
 }
 
 @media (max-width: 600px) and (min-width: 300px){
     .about{
+        flex-direction: column;
+    }
+    .about-text{
         width: 90vw;
         padding: 0em 1em;
         font-size: 20px;
         letter-spacing: 0.2px;
     }
+
+    /* Homepage Mobile */
     .inputText{
         font-family: 'Lapicide';
         text-align: center;
@@ -61,5 +94,67 @@ body{
         border-radius: 50%;
         background: #949494;
         cursor: pointer;
+    }
+
+    /* Shop Page Mobile */
+    .shop-title, .radio-option{
+        font-family: "Lapicide";
+        font-weight: 300;
+    }
+    .shop{
+       margin: 2vh 5vw ; 
+    }
+    .link-info{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .link-div{
+        margin-bottom: 4vh;        
+    }
+    .email-input{
+        border: none;
+        background-color: #F5F5F5;
+        font-size: 12px;
+        width: 16em;
+        margin: 1em 0em;
+    }
+    .btn-buy{
+        padding: 1.5em 3em;
+        background-color: black;
+        color: white;
+        border-radius: 5em;
+        font-size: 10px;
+        margin-right: 2em;
+    }
+    .btn-trial{
+        padding: 1.5em 3em;
+        background-color: #F5F5F5;
+        border-radius: 5em;
+        font-size: 10px;
+    }
+    .btn-shop{
+        display: flex;
+        flex-direction: row;
+    }
+    .popUp-info {
+        display: none;
+        background-color: black;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 10em;
+        height: 5em;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-btn{
+        width: 15px;
+        height: 15px;
+        margin-left: 0.5em;
+    }
+    .info-btn:hover .popUp-info{
+        display: block;
     }
 }
