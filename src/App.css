@@ -17,6 +17,7 @@ body{
     flex-wrap: wrap;
     width: 45vw;
     font-size: 25px;
+    letter-spacing: 0.5px;
 }
 
 .radio-option.selected{
