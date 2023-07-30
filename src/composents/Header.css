@@ -7,10 +7,10 @@
     background-color: black;
     color: white;
     margin-top: 0.5em;
-    padding: 1.5em 4em;
+    padding: 1.5em 3em;
     border-radius: 5em;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     align-items: center;
 }
@@ -22,7 +22,7 @@
 }
 .hr-header{
     display: block;
-    width: 98.8vw;
+    width: 99.9vw;
     height: 0.5px;
     background-color: black;
     margin-bottom: 3vh;
@@ -47,8 +47,13 @@
     }
     .header{
         justify-content: start;
+        position: relative;
+        z-index: 3;
+
     }
     .hr-header{
         width: 100vw;
+        position: relative;
+        z-index: 3;
     }
 }

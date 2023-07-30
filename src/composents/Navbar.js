@@ -15,8 +15,9 @@ function Navbar(){
     }
     return(
         <>
+        <hr className="hr-nav"/>
         <nav className={`${openMenu ? 'openNav' : 'closeNav'}`}>
-        <div>
+        
                 <div className="nav-Link">
                     <Link to='/' onClick={closeMenu}>
                         <li>TEST</li>
@@ -50,10 +51,9 @@ function Navbar(){
                             <li>WEBSITE</li>
                         </div>
                         </Link>
-                    
-                </div>
-
         </div>
+
+        
         </nav>
         <button  className={classNames ("navbar-burger", {'open': openMenu})} onClick={handleOpenMenu}>
             <span className="burger-bar"></span>

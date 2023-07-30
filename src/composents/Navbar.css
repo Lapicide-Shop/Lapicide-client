@@ -1,27 +1,100 @@
+nav{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    background-color: #F5F5F5;
+    justify-content: space-between;
+}
 
+.openNav, .closeNav{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 1.5vw;
+    background-color: #F5F5F5;
+}
+
+.nav-Link{
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+}
+
+.nav-Link a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-Link a:hover{
+    text-decoration: underline;
+}
+.nav-Link li{
+    list-style-type: none;
+    font-size: 14px;
+}
+.arrow-nav{
+    width: 15px;
+    height: 15px;
+    margin-right: 0.5em;
+}
+.social-link{
+    display: flex;  
+    justify-content: space-between;
+    width: 25vw;
+}
+
+.social-link a{
+    text-decoration: none;
+    color: black;
+}
+
+.social-link a:hover{
+    text-decoration: underline;
+}
+
+.social{
+    display: flex;
+}
+.social li{
+    list-style: none;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar-burger{
+    display: none;
+}
+.hr-nav{
+    display: block;
+    width: 99.9vw;
+    height: 0.2px;
+    background-color: black;
+    margin: 2em 0em 0.5em;
+
+}
 
 @media (max-width: 600px) and (min-width: 300px){
-    nav{
-        position: fixed;
-        background-color: #F5F5F5;
-    }
+
     .closeNav{
         display: none;
+
     }
     .openNav {
         display: block;
         position: fixed;
         left: 0;
-        right: 0;
         top: 0;
-        padding: 5em;
+        padding: 10em 3em;
         margin: 0;
-        z-index: 1;
-        transform: translateX(10%);
+        z-index: 2;
         height: 100vh;
         width: 100vw;
         background-color: #F5F5F5;
         transition:  0.3s ease-in-out;
+    }
+    .nav-Link{
+        flex-direction: column;
+        padding-bottom: 3em;
+        width: 10em;
     }
     .nav-Link li{
         list-style-type: square;
@@ -32,7 +105,9 @@
         height: 15px;
         margin-right: 0.5em;
     }
-
+    .social-link{
+        flex-direction: column;
+    }
     .social{
         display: flex;
     }
@@ -52,7 +127,7 @@
 
     .navbar-burger.open{
         position: fixed;
-        z-index: 2;
+        z-index: 4;
     }
     .burger-bar,
     .burger-bar::before{
@@ -62,6 +137,7 @@
         position: relative;
         background-color: black;
         transition: all 0.1s ease-in-out;
+        z-index: 4;
     }
 
     .burger-bar::before{
@@ -74,5 +150,7 @@
     .navbar-burger.open .burger-bar{
         transform: rotate(45deg);
     }
-
+    .hr-nav{
+        display: none;
+    }
 }

@@ -2,7 +2,7 @@ import Carrousel from "../composents/Carrousel"
 
 function About(){
     return(
-        <div className="about">
+        <div className="add-carrousel">
             <Carrousel />
             <div className="about-text">
                 <p>

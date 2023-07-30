@@ -5,7 +5,7 @@
 
 .carrousel-image{
     width: 47vw;
-
+    height: 66vh;
 }
 
 .carrousel{
@@ -26,13 +26,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0em 1em;
+    margin: 0em 1.5em;
 }
-
 
 hr{
     display: none;
 }
+
 @media (max-width: 600px) and (min-width: 300px){
     hr{
         display: block;
@@ -46,6 +46,7 @@ hr{
     }
     .carrousel-image{
         width: 90vw;
+        height: auto;
         display: flex;
         justify-content: center;
     }

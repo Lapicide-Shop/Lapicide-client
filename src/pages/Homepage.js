@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import Carrousel from "../composents/Carrousel"
 function Homepage(){
 
     const [text, setText] = useState('LAPICIDE');
@@ -24,21 +24,25 @@ function Homepage(){
     };
 
     return(
-        <section>
-            <div className="inputText" suppressContentEditableWarning={true} contentEditable="true"  onChange={handleChangeText} style={inputStyle}>
-                {text}
+        <section className="add-carrousel">
+            <div>
+                <Carrousel />
             </div>
+            <div>
+                    <div className="inputText" suppressContentEditableWarning={true} contentEditable="true"  onChange={handleChangeText} style={inputStyle}>
+                        {text}
+                    </div>
 
-            <div className="input-font">
-                <div className="input-fontSize">
-                    <p className="mr-">Size</p>
-                    <input type="range" min="8" max="72" step="0.1" onChange={handleChangeFontSize}  value={fontSize}/>
+                    <div className="input-font">
+                    <div className="input-fontSize">
+                        <p className="mr-">SIZE</p>
+                        <input type="range" min="8" max="72" step="0.1" onChange={handleChangeFontSize}  value={fontSize}/>
+                    </div>
+                    <div className="input-spacingLetter">
+                        <p>SPACING</p>
+                        <input type="range" min="1" max="12" step="0.1" onChange={handleChangeLetterSpacing}  value={letterSpacing} />
+                    </div>
                 </div>
-                <div className="input-spacingLetter">
-                    <p>Spacing</p>
-                    <input type="range" min="1" max="12" step="0.1" onChange={handleChangeLetterSpacing}  value={letterSpacing} />
-                </div>
-
             </div>
         </section>
     )

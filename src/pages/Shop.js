@@ -4,6 +4,7 @@ import { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "../composents/CheckoutForm"
+import Carrousel from "../composents/Carrousel"
 
 const stripePromise = loadStripe(process.env.YOUR_STRIPE_PUBLIC_KEY)
 
@@ -68,6 +69,8 @@ function Shop(){
     console.log(selectType);
     console.log(selectLicense);
     return(
+    <div className="add-carrousel">
+        <Carrousel />
         <div className="shop">
             <h1 className="shop-title">BUY THE FONT</h1>
 
@@ -125,7 +128,7 @@ function Shop(){
                 </div>
             </div>
 
-            <input className="email-input" placeholder="Email where will be send the font..."></input>
+            <input className="email-input" placeholder="Email where will be send the font..." autoComplete="email"></input>
 
             <div className="btn-shop">
                 <Link>
@@ -136,6 +139,7 @@ function Shop(){
                 </Link>
             </div>
         </div>
+    </div>
     )
 }
 
