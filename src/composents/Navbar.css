@@ -1,8 +1,10 @@
 nav{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
+
     background-color: #F5F5F5;
     justify-content: space-between;
+
 }
 
 .openNav, .closeNav{
@@ -10,6 +12,7 @@ nav{
     flex-direction: row;
     margin: 0;
     padding: 1.5vw;
+
     background-color: #F5F5F5;
 }
 
@@ -68,28 +71,33 @@ nav{
     width: 99.9vw;
     height: 0.2px;
     background-color: black;
-    margin: 2em 0em 0.5em;
+    margin: 2.5em 0em 0.5em;
 
 }
 
 @media (max-width: 600px) and (min-width: 300px){
 
     .closeNav{
-        display: none;
+        display: block;
+        
+        transform: translateX(200%);
+        left: 0;
 
     }
     .openNav {
         display: block;
-        position: fixed;
+        position: absolute;
         left: 0;
         top: 0;
-        padding: 10em 3em;
+        padding-top: 10em ;
+        padding-left: 3em;
         margin: 0;
         z-index: 2;
         height: 100vh;
-        width: 100vw;
+        width: 86%;
+        transform: translateX(0);
         background-color: #F5F5F5;
-        transition:  0.3s ease-in-out;
+        transition:  0.5s ease-in-out;
     }
     .nav-Link{
         flex-direction: column;
@@ -99,10 +107,12 @@ nav{
     .nav-Link li{
         list-style-type: square;
         list-style-type: style color #949494;
+        padding: 0.3em 0em;
     }
     .arrow-nav{
         width: 15px;
         height: 15px;
+        padding: 0.3em 0em;
         margin-right: 0.5em;
     }
     .social-link{
@@ -113,6 +123,8 @@ nav{
     }
     .social li{
         list-style: none;
+        padding: 0.3em 0em;
+
     }
 
     .navbar-burger{
@@ -126,7 +138,7 @@ nav{
     }
 
     .navbar-burger.open{
-        position: fixed;
+        position: absolute;
         z-index: 4;
     }
     .burger-bar,

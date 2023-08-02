@@ -3,7 +3,7 @@ import Carrousel from "../composents/Carrousel"
 function Homepage(){
 
     const [text, setText] = useState('LAPICIDE');
-    const [fontSize, setFontSize] = useState(32);
+    const [fontSize, setFontSize] = useState(72);
     const [letterSpacing, setLetterSpacing] = useState(1);
 
     const handleChangeText = (e) => {
@@ -36,7 +36,7 @@ function Homepage(){
                     <div className="input-font">
                     <div className="input-fontSize">
                         <p className="mr-">SIZE</p>
-                        <input type="range" min="8" max="72" step="0.1" onChange={handleChangeFontSize}  value={fontSize}/>
+                        <input type="range" min="36" max="156" step="0.1" onChange={handleChangeFontSize}  value={fontSize}/>
                     </div>
                     <div className="input-spacingLetter">
                         <p>SPACING</p>

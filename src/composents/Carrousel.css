@@ -4,8 +4,9 @@
 }
 
 .carrousel-image{
-    width: 47vw;
-    height: 66vh;
+    width: 46em;
+    height: 29.5em;
+    transition: 0.2s ease-in-out;
 }
 
 .carrousel{

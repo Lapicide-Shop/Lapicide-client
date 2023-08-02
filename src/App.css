@@ -6,6 +6,7 @@
 body{
     background-color: #F5F5F5;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
 }
 
 .add-carrousel{
@@ -20,6 +21,8 @@ body{
         outline: none;
         height: auto;
         width: 48vw;
+        overflow-y: scroll;
+        height: 55vh;
     }
     .input-font{
         display: flex;
@@ -68,6 +71,7 @@ body{
     flex-wrap: wrap;
     width: 45vw;
     font-size: 23px;
+
 }
 .about-text p{
     margin: 0em;
