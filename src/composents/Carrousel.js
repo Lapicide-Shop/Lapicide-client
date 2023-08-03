@@ -1,4 +1,4 @@
-import { useState } from "react"
+import {  useState } from "react"
 import image1 from '../assets/lapicide.png'
 import image2 from '../assets/lapicide2.png'
 import image3 from '../assets/lapicide3.png'
@@ -11,12 +11,11 @@ import image9 from '../assets/lapicide9.png'
 import image10 from '../assets/lapicide10.png'
 import "../composents/Carrousel.css"
 
-
 const Carrousel = () => {
 
     const images = [
         image1,image2, image3, image4, image5, image6, image7, image8, image9, image10 
-      ]
+    ]
       
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     
@@ -27,6 +26,7 @@ const Carrousel = () => {
     const nextImage = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex === images.length -1 ? 0 : prevIndex +1 ));
     };
+
 
 
     return(
