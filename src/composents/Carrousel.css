@@ -5,7 +5,7 @@
 
 .carrousel-image{
     width: 46em;
-    height: 29.5em;
+    height: auto;
     transition: 0.2s ease-in-out;
 }
 
@@ -34,16 +34,18 @@ hr{
     display: none;
 }
 
-@media (max-width: 600px) and (min-width: 300px){
+@media (max-width: 1100px) and (min-width: 300px){
     hr{
         display: block;
         margin:0;
         width: 100vw;
         height: 0.5px;
     }
-    
+    .carrousel-div{
+        width: 100%;
+    }
     .carrousel{
-        width: 100vw;
+
     }
     .carrousel-image{
         width: 90vw;
@@ -68,7 +70,10 @@ hr{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 0em 1em;
-        width: 90vw;
+        margin: 0em ;
+        width: 100%;
+    }
+    .carrousel-btn a{
+        margin: 0em 2em;
     }
 }
