@@ -1,22 +1,21 @@
 
+
 .carrousel-div{
     width: 50vw;
 }
 
 .carrousel-image{
-    width: 46em;
-    height: auto;
-    transition: 0.2s ease-in-out;
+    object-fit: cover;
+    width: 48vw;
+    height: 70vh;
+    margin-left: 1.5em;
+    transition: transform 0.5s ease;
 }
 
-.carrousel{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .carrousel-btn a, .carrousel-btn p{
     font-size: 0.6em;
+    color: black;
 }
 
 .carrousel-btn a{
@@ -27,8 +26,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0em 1.5em;
+    margin: 0em 1.2em;
+    position: relative;
 }
+
+
 
 hr{
     display: none;
@@ -52,6 +54,7 @@ hr{
         height: auto;
         display: flex;
         justify-content: center;
+        margin-left: 0em;
     }
 
     .carrousel{
