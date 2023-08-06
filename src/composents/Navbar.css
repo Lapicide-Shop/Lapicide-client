@@ -82,7 +82,7 @@ nav{
         padding-top: 10em ;
         left: 0;
         top: 0;
-        height: 100vh;
+        height: 300vh;
         width: 86%;
         transition:  0.3s ease-in-out;
         background-color: #F5F5F5;
@@ -97,7 +97,7 @@ nav{
         padding-left: 12%;
         margin: 0;
         z-index: 2;
-        height: 100vh;
+        height: 130vh;
         width: 86%;
         transform: translateX(0);
         background-color: #F5F5F5;

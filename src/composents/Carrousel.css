@@ -6,7 +6,7 @@
 
 .carrousel-image{
     object-fit: cover;
-    width: 48vw;
+    width: 46vw;
     height: 70vh;
     margin-left: 1.5em;
     transition: transform 0.5s ease;
@@ -29,7 +29,7 @@
     margin: 0.5em 1.8vw 0em;
     position: relative; 
     font-size: 16px;
-    width: 47vw;
+    width: 45.5vw;
 }
 .swiper-pagination span{
     font-size: 12px;
