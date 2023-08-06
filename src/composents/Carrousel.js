@@ -14,8 +14,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper'
 import  {Navigation, Pagination} from 'swiper/modules'
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
+
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -25,8 +25,6 @@ const Carrousel = () => {
         image1,image2, image3, image4, image5, image6, image7, image8, image9, image10 
     ]
       
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
 
 
     {/*const prevImage = () => {
@@ -61,7 +59,9 @@ const Carrousel = () => {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev'
                         }}
+                        
                         pagination={{
+                            el:".swiper-pagination",
                             type: 'fraction',
                             formatFractionCurrent: function (number) {
                             if(number === 10){
@@ -84,9 +84,9 @@ const Carrousel = () => {
 
                 </Swiper>
                 <div className="carrousel-btn">
-                        <a className="swiper-button-prev">PREVIOUS</a>
+                        <a type="button" className="swiper-button-prev">PREVIOUS</a>
                         <div className="swiper-pagination"></div>
-                        <a className="swiper-button-next">NEXT</a>
+                        <a type="button" className="swiper-button-next">NEXT</a>
                 </div>
         </div>
         )

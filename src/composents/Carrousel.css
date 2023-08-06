@@ -26,11 +26,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0em 1.2em;
-    position: relative;
+    margin: 0.5em 1.8vw 0em;
+    position: relative; 
+    font-size: 16px;
+    width: 47vw;
 }
-
-
+.swiper-pagination span{
+    font-size: 12px;
+}
 
 hr{
     display: none;
@@ -46,15 +49,14 @@ hr{
     .carrousel-div{
         width: 100%;
     }
-    .carrousel{
 
-    }
     .carrousel-image{
         width: 90vw;
         height: auto;
         display: flex;
         justify-content: center;
-        margin-left: 0em;
+        margin-left: 5vw;
+        
     }
 
     .carrousel{
@@ -63,6 +65,10 @@ hr{
         align-items: center;
         
     }
+    .swiper-pagination span{
+        font-size: 10px;
+    }
+
 
     .carrousel-btn a, .carrousel-btn p{
         font-size: 0.6em;
