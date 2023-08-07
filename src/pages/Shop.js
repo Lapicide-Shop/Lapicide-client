@@ -69,9 +69,11 @@ function Shop(){
     console.log(selectType);
     console.log(selectLicense);
     return(
+    
     <div className="add-carrousel">
         <Carrousel />
         <div className="shop">
+        
             <h1 className="shop-title">BUY THE FONT</h1>
 
             <div className="link-div">

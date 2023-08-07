@@ -18,9 +18,7 @@
     color: black;
 }
 
-.carrousel-btn a{
-    cursor: pointer;
-}
+
 .carrousel-btn{
     display: flex;
     flex-direction: row;
@@ -31,7 +29,7 @@
     font-size: 16px;
     width: 45.5vw;
 }
-.swiper-pagination span{
+.swiper-pagination{
     font-size: 12px;
 }
 

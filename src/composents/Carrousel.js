@@ -1,4 +1,4 @@
-import { React, useState } from "react"
+import { React } from "react"
 import image1 from '../assets/lapicide.png'
 import image2 from '../assets/lapicide2.png'
 import image3 from '../assets/lapicide3.png'
@@ -18,37 +18,17 @@ import 'swiper/css';
 
 
 SwiperCore.use([Navigation, Pagination]);
+    
 
-const Carrousel = () => {
+const Carrousel = (mouseOverEvent,mouseOutEvent) => {
+    
 
     const images = [
         image1,image2, image3, image4, image5, image6, image7, image8, image9, image10 
     ]
       
 
-
-    {/*const prevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-    };
-
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === images.length -1 ? 0 : prevIndex +1 ));
-    };*/}
-   
-
     return(
-        // <div className="carrousel-div">
-        //     <div className="carrousel">   
-        //     <img className="carrousel-image" src={images[currentImageIndex]} alt={`Image ${currentImageIndex +1}`}/> 
-                
-        //     </div>
-        //     <div className="carrousel-btn">
-        //         <a onClick={prevImage}>PREVIOUS</a>
-        //         <p>{currentImageIndex +1}/10</p>
-        //         <a  onClick={nextImage}>NEXT</a>
-        //     </div>
-        //     <hr/>
-        // </div>
         <div className="carrousel-div">
                   <Swiper
                         modules={[Navigation, Pagination]}
@@ -77,14 +57,14 @@ const Carrousel = () => {
                     {images.map((image) => (
                         
                             <SwiperSlide>
-                                <img className="carrousel-image" src={image} alt="image-caroussel"/>
+                                <img onMouseOver={mouseOverEvent} onMouseOut={mouseOutEvent} className="carrousel-image" src={image} alt="image-caroussel"/>
                             </SwiperSlide>
                         
                     ))}          
 
                 </Swiper>
                 <div className="carrousel-btn">
-                        <a type="button" className="swiper-button-prev">PREVIOUS</a>
+                        <a onMouseOver={mouseOverEvent} onMouseOut={mouseOutEvent}  type="button" className="swiper-button-prev">PREVIOUS</a>
                         <div className="swiper-pagination"></div>
                         <a type="button" className="swiper-button-next">NEXT</a>
                 </div>
