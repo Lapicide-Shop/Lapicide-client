@@ -302,3 +302,8 @@ body{
         display: block;
     }
 }
+@media (max-width: 600px) and (min-width: 300px){
+    *{
+        cursor: initial;
+    }
+}

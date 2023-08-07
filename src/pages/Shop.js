@@ -5,10 +5,21 @@ import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "../composents/CheckoutForm"
 import Carrousel from "../composents/Carrousel"
+import font from "../font/Lapicide_TRIAL.otf"
 
 const stripePromise = loadStripe(process.env.YOUR_STRIPE_PUBLIC_KEY)
 
 function Shop(){
+
+    
+    const downloadDocument = () => {
+        const url = process.env.PUBLIC_URL + `/font/Lapicide_TRIAL.otf`; // Remplacez par le nom de votre document avec l'extension appropriée
+      
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = "Lapicide_TRIAL.otf";
+        link.click();
+    };
 
     const [selectType, setSelectType] = useState('Web');
     const [selectLicense, setSelectLicense] = useState('S')
@@ -137,7 +148,7 @@ function Shop(){
                     <button className="btn-buy" onClick={handlePayment}>{getPrice()}</button>
                 </Link>
                 <Link>
-                    <button className="btn-trial" >TRIAL VERSION</button>
+                    <button onClick={downloadDocument} className="btn-trial"  >TRIAL VERSION</button>
                 </Link>
             </div>
         </div>

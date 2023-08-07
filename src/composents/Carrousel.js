@@ -57,14 +57,14 @@ const Carrousel = (mouseOverEvent,mouseOutEvent) => {
                     {images.map((image) => (
                         
                             <SwiperSlide>
-                                <img onMouseOver={mouseOverEvent} onMouseOut={mouseOutEvent} className="carrousel-image" src={image} alt="image-caroussel"/>
+                                <img  className="carrousel-image" src={image} alt="image-caroussel"/>
                             </SwiperSlide>
                         
                     ))}          
 
                 </Swiper>
                 <div className="carrousel-btn">
-                        <a onMouseOver={mouseOverEvent} onMouseOut={mouseOutEvent}  type="button" className="swiper-button-prev">PREVIOUS</a>
+                        <a type="button" className="swiper-button-prev">PREVIOUS</a>
                         <div className="swiper-pagination"></div>
                         <a type="button" className="swiper-button-next">NEXT</a>
                 </div>
