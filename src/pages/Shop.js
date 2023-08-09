@@ -3,7 +3,6 @@ import info from '../assets/info.png'
 import { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
-import CheckoutForm from "../composents/CheckoutForm"
 import Carrousel from "../composents/Carrousel"
 import font from "../font/Lapicide_TRIAL.otf"
 
@@ -14,15 +13,19 @@ function Shop(){
     
     const downloadDocument = () => {
         const url = process.env.PUBLIC_URL + `/font/Lapicide_TRIAL.otf`; // Remplacez par le nom de votre document avec l'extension appropriée
-      
+    
         const link = document.createElement('a');
         link.href = url;
         link.download = "Lapicide_TRIAL.otf";
         link.click();
     };
 
+
+
+    
+    const result = "";
     const [selectType, setSelectType] = useState('Web');
-    const [selectLicense, setSelectLicense] = useState('S')
+    const [selectLicense, setSelectLicense] = useState("S")
 
     const handleTypeChange = (type) => {
         setSelectType(type);
@@ -35,50 +38,53 @@ function Shop(){
     const getPrice = () => {
 
         const price = {
-        Print:{
-            Freelance:"BUY FOR 75€",
-            S:"BUY FOR 90€",
-            M:"BUY FOR 170€",
-            L:"BUY FOR 225€",
-            XL: "CONTACT ME!"
-        },
-        Web:{
-            Freelance:"BUY FOR 90€",
-            S:"BUY FOR 120€",
-            M:"BUY FOR 190€",
-            L:"BUY FOR 250€",
-            XL: "CONTACT ME!"     
-        },
-        Branding:{
-            Freelance:"BUY FOR 130€",
-            S:"BUY FOR 260€",
-            M:"BUY FOR 780€",
-            L:"BUY FOR 1430€",
-            XL: "CONTACT ME!"
-        },
-    }
-    return price[selectType][selectLicense]       
+            Print:{licence:"Print", type:"Freelance", price:"BUY FOR 75€", id:"price_1LYAipEudbBbgrFH6B8HfKgl"},
+            Print:{licence:"Print", type: "S", price:"BUY FOR 90€", id: "price_1LYAqUEudbBbgrFHIZUmwcOH"},
+            Print:{licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1LYArNEudbBbgrFHb114ipYS"},
+            Print:{licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1LYArpEudbBbgrFH9WaASNC7"},
+            Print:{licence:"Print", type : "XL", price: "CONTACT ME!"},
+
+            Web:{licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1LYAubEudbBbgrFHBqcHzPXk"},
+            Web:{licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1LYAveEudbBbgrFHoSPt7Pyc"},
+            Web:{licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1LYAy7EudbBbgrFH4Qefvzig"},
+            Web:{licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1LYAyfEudbBbgrFHcOR0aqqJ"},
+            Web:{licence:"Web", type: "XL", price: "CONTACT ME!"},
+
+            Branding:{licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1LYAzdEudbBbgrFHj8mHrSZG"},
+            Branding:{licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1LYB0bEudbBbgrFHYaayikoH"},
+            Branding:{licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1LYB1NEudbBbgrFHl7uIcFq0"},
+            Branding:{licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1LYB1tEudbBbgrFHiPcxaii8"},
+            Branding:{licence:"Branding", type: "XL", price: "CONTACT ME!"}
+        }
+        console.log([selectType][selectLicense]);
+        return price[selectType][selectLicense]
 }
 
-    const handlePayment = async () => {
+   {/* const handlePayment = async (priceId) => {
         const stripe = await stripePromise;
 
-        const {error} = await stripe.redirectToCheckout({
-            
-            lineItems: [
-                {price: 'Add product on server.js', quantity: 1},
-            ],
-            mode: 'payment',
-            successUrl: 'success adress',
-            cancelUrl: 'cancel adress',
+        const response = await fetch('/create-checkout-session',{
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({priceId}),
         });
-
-        if (error) {
-            console.error(error);
+        const session = await response.json();
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id,
+        });
+        if (result.error) {
+            console.clg('faux');
         }
-    };
-    console.log(selectType);
-    console.log(selectLicense);
+    };*/}
+
+
+
+
+
+
+
     return(
     
     <div className="add-carrousel">
@@ -137,7 +143,7 @@ function Shop(){
                     L license (10-20 employees)
                 </div>
                 <div className={`radio-option ${selectLicense === "XL" && "selected"}`} onClick={() => handleSelectLicense('XL')}>
-                    XL license (> 20 employees)
+                    XL license ({">"} 20 employees)
                 </div>
             </div>
 
@@ -145,7 +151,7 @@ function Shop(){
 
             <div className="btn-shop">
                 <Link>
-                    <button className="btn-buy" onClick={handlePayment}>{getPrice()}</button>
+                    <button className="btn-buy" >{getPrice()}</button>
                 </Link>
                 <Link>
                     <button onClick={downloadDocument} className="btn-trial"  >TRIAL VERSION</button>
