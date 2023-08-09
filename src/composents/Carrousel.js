@@ -54,10 +54,10 @@ const Carrousel = (mouseOverEvent,mouseOutEvent) => {
                         onSwiper={(swiper) => console.log(swiper)}
                         
                     >
-                    {images.map((image) => (
+                    {images.map((image, i ) => (
                         
-                            <SwiperSlide>
-                                <img  className="carrousel-image" src={image} alt="image-caroussel"/>
+                            <SwiperSlide >
+                                <img key={i} className="carrousel-image" src={image} alt="image-caroussel"/>
                             </SwiperSlide>
                         
                     ))}          

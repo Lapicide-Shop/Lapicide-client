@@ -22,45 +22,48 @@ function Shop(){
 
 
 
-    
-    const result = "";
-    const [selectType, setSelectType] = useState('Web');
-    const [selectLicense, setSelectLicense] = useState("S")
 
-    const handleTypeChange = (type) => {
-        setSelectType(type);
-    };
+    const [selectLicense, setSelectLicense] = useState('Web');
+    const [selectType, setSelectType] = useState("S")
 
     const handleSelectLicense = (type) => {
         setSelectLicense(type);
     };
 
-    const getPrice = () => {
+    const handleTypeChange = (type) => {
+        setSelectType(type);
+    };
 
-        const price = {
-            Print:{licence:"Print", type:"Freelance", price:"BUY FOR 75€", id:"price_1LYAipEudbBbgrFH6B8HfKgl"},
-            Print:{licence:"Print", type: "S", price:"BUY FOR 90€", id: "price_1LYAqUEudbBbgrFHIZUmwcOH"},
-            Print:{licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1LYArNEudbBbgrFHb114ipYS"},
-            Print:{licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1LYArpEudbBbgrFH9WaASNC7"},
-            Print:{licence:"Print", type : "XL", price: "CONTACT ME!"},
 
-            Web:{licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1LYAubEudbBbgrFHBqcHzPXk"},
-            Web:{licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1LYAveEudbBbgrFHoSPt7Pyc"},
-            Web:{licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1LYAy7EudbBbgrFH4Qefvzig"},
-            Web:{licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1LYAyfEudbBbgrFHcOR0aqqJ"},
-            Web:{licence:"Web", type: "XL", price: "CONTACT ME!"},
+        const price = [
+            {licence:"Print", type:"Freelance", price:"BUY FOR 75€", id:"price_1LYAipEudbBbgrFH6B8HfKgl"},
+            {licence:"Print", type: "S", price:"BUY FOR 90€", id: "price_1LYAqUEudbBbgrFHIZUmwcOH"},
+            {licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1LYArNEudbBbgrFHb114ipYS"},
+            {licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1LYArpEudbBbgrFH9WaASNC7"},
+            {licence:"Print", type : "XL", price: "CONTACT ME!", id:"CONTACTME"},
 
-            Branding:{licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1LYAzdEudbBbgrFHj8mHrSZG"},
-            Branding:{licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1LYB0bEudbBbgrFHYaayikoH"},
-            Branding:{licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1LYB1NEudbBbgrFHl7uIcFq0"},
-            Branding:{licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1LYB1tEudbBbgrFHiPcxaii8"},
-            Branding:{licence:"Branding", type: "XL", price: "CONTACT ME!"}
-        }
-        console.log([selectType][selectLicense]);
-        return price[selectType][selectLicense]
-}
+            {licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1LYAubEudbBbgrFHBqcHzPXk"},
+            {licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1LYAveEudbBbgrFHoSPt7Pyc"},
+            {licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1LYAy7EudbBbgrFH4Qefvzig"},
+            {licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1LYAyfEudbBbgrFHcOR0aqqJ"},
+            {licence:"Web", type: "XL", price: "CONTACT ME!", id:"CONTACTME"},
 
-   {/* const handlePayment = async (priceId) => {
+            {licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1LYAzdEudbBbgrFHj8mHrSZG"},
+            {licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1LYB0bEudbBbgrFHYaayikoH"},
+            {licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1LYB1NEudbBbgrFHl7uIcFq0"},
+            {licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1LYB1tEudbBbgrFHiPcxaii8"},
+            {licence:"Branding", type: "XL", price: "CONTACT ME!", id:"CONTACTME"}
+        ]
+
+        
+        const result = price.filter((price) => price.licence === selectLicense && price.type === selectType);
+
+
+
+
+
+   const handlePayment = async (priceId) => {
+
         const stripe = await stripePromise;
 
         const response = await fetch('/create-checkout-session',{
@@ -75,9 +78,9 @@ function Shop(){
             sessionId: session.id,
         });
         if (result.error) {
-            console.clg('faux');
+            console.error(result.error.message);
         }
-    };*/}
+    };
 
 
 
@@ -95,7 +98,7 @@ function Shop(){
 
             <div className="link-div">
                 <div className="link-info">
-                    <div  className={`radio-option ${selectType === "Print" && "selected"}`} onClick={() => handleTypeChange('Print')}>
+                    <div  className={`radio-option ${selectLicense === "Print" && "selected"}`} onClick={() => handleSelectLicense('Print')}>
                         Desktop & Print   
                     </div>
                     <img className="info-btn" src={info} alt="info-popUp"/>
@@ -106,7 +109,7 @@ function Shop(){
                     </div>
                 </div>
                 <div  className="link-info">
-                    <div className={`radio-option ${selectType === "Web" && "selected"}`} onClick={() => handleTypeChange('Web')}>
+                    <div className={`radio-option ${selectLicense === "Web" && "selected"}`} onClick={() => handleSelectLicense('Web')}>
                         Web (socials + apps)
                     </div>
                     <img className="info-btn" src={info} alt="info-popUp"/>
@@ -117,7 +120,7 @@ function Shop(){
                     </div>
                 </div>
                 <div  className="link-info">
-                    <div className={`radio-option ${selectType === "Branding" && "selected"}`} onClick={() => handleTypeChange('Branding')}>
+                    <div className={`radio-option ${selectLicense === "Branding" && "selected"}`} onClick={() => handleSelectLicense('Branding')}>
                         Branding (desktop + web + apps)
                     </div>            
                     <img className="info-btn" src={info} alt="info-popUp"/>
@@ -130,19 +133,19 @@ function Shop(){
             </div>
 
             <div className="link-license">
-                <div className={`radio-option ${selectLicense === "Freelance" && "selected"}`} onClick={() => handleSelectLicense('Freelance')}>
+                <div className={`radio-option ${selectType === "Freelance" && "selected"}`} onClick={() => handleTypeChange('Freelance')}>
                     Independant & Freelance
                 </div>
-                <div className={`radio-option ${selectLicense === "S" && "selected"}`} onClick={() => handleSelectLicense('S')}>
+                <div className={`radio-option ${selectType === "S" && "selected"}`} onClick={() => handleTypeChange('S')}>
                     S license (1-5 employees)
                 </div>
-                <div className={`radio-option ${selectLicense === "M" && "selected"}`} onClick={() => handleSelectLicense('M')}>
+                <div className={`radio-option ${selectType === "M" && "selected"}`} onClick={() => handleTypeChange('M')}>
                     M license (6-9 employees)
                 </div>
-                <div className={`radio-option ${selectLicense === "L" && "selected"}`} onClick={() => handleSelectLicense('L')}>
+                <div className={`radio-option ${selectType === "L" && "selected"}`} onClick={() => handleTypeChange('L')}>
                     L license (10-20 employees)
                 </div>
-                <div className={`radio-option ${selectLicense === "XL" && "selected"}`} onClick={() => handleSelectLicense('XL')}>
+                <div className={`radio-option ${selectType === "XL" && "selected"}`} onClick={() => handleTypeChange('XL')}>
                     XL license ({">"} 20 employees)
                 </div>
             </div>
@@ -151,7 +154,11 @@ function Shop(){
 
             <div className="btn-shop">
                 <Link>
-                    <button className="btn-buy" >{getPrice()}</button>
+                {result.map((e) => {
+                    return(
+                    <button className="btn-buy" onClick={() => handlePayment(e.id)} key={e.id}>{e.price}</button>
+                    )
+                })}
                 </Link>
                 <Link>
                     <button onClick={downloadDocument} className="btn-trial"  >TRIAL VERSION</button>
