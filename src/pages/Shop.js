@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import info from '../assets/info.png'
 import { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
-import { Elements } from "@stripe/react-stripe-js"
 import Carrousel from "../composents/Carrousel"
 import font from "../font/Lapicide_TRIAL.otf"
 
