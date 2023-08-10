@@ -4,12 +4,13 @@ import { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import Carrousel from "../composents/Carrousel"
 import font from "../font/Lapicide_TRIAL.otf"
+import axios from "axios"
 
 const YOUR_STRIPE_PUBLIC_KEY = "pk_test_51LOmW7EudbBbgrFHNKTiANb2BTtya9yKwuNWseZoz4j1xCgsuMzj4sc44ixukkDLkFQHcAavndAKsa3qk371BF3I00DgKmbdtM"
 const stripePromise = loadStripe(YOUR_STRIPE_PUBLIC_KEY)
 
 function Shop(){
-
+    const API_URL = process.env.REACT_APP_SERVER_URL
     
     const downloadDocument = () => {
         const url = process.env.PUBLIC_URL + `/font/Lapicide_TRIAL.otf`; // Remplacez par le nom de votre document avec l'extension appropriée
@@ -64,25 +65,24 @@ function Shop(){
 
    const handlePayment = async (priceId) => {
 
-        const stripe = await stripePromise;
-        console.log(priceId);
-        const response  = await fetch('/create-checkout-session',{
-            method:'POST',
-            headers:{
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({priceId}),
-        });
-        console.log(response);
-        const session = await response.json();
-        console.log(session);
-        const result = await stripe.redirectToCheckout({
-            sessionId: session.id,
-        });
-        if (result.error) {
-            console.error(result.error.message);
-        }
-    };
+        try {
+            const response = await axios.post(`${API_URL}/create-checkout-session`, {
+              priceId: priceId,
+            });
+      
+            const session = response.data;
+      
+            const stripe = await stripePromise;
+            const result = await stripe.redirectToCheckout({
+              sessionId: session.id,
+            });
+            if (result.error) {
+                console.error(result.error.message);
+              }
+            } catch (error) {
+              console.error('Erreur lors de la requête vers le serveur :', error);
+            }
+        };
 
 
 
