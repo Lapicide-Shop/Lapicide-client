@@ -3,15 +3,14 @@ import info from '../assets/info.png'
 import { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import Carrousel from "../composents/Carrousel"
-import font from "../font/Lapicide_TRIAL.otf"
 import axios from "axios"
 
-const YOUR_STRIPE_PUBLIC_KEY = "pk_test_51LOmW7EudbBbgrFHNKTiANb2BTtya9yKwuNWseZoz4j1xCgsuMzj4sc44ixukkDLkFQHcAavndAKsa3qk371BF3I00DgKmbdtM"
-const stripePromise = loadStripe(YOUR_STRIPE_PUBLIC_KEY)
+const stripePromise = loadStripe("pk_test_51LOmW7EudbBbgrFHNKTiANb2BTtya9yKwuNWseZoz4j1xCgsuMzj4sc44ixukkDLkFQHcAavndAKsa3qk371BF3I00DgKmbdtM")
 
 function Shop(){
+
     const API_URL = process.env.REACT_APP_SERVER_URL
-    
+
     const downloadDocument = () => {
         const url = process.env.PUBLIC_URL + `/font/Lapicide_TRIAL.otf`; // Remplacez par le nom de votre document avec l'extension appropriée
     
@@ -22,10 +21,10 @@ function Shop(){
     };
 
 
-
-
+    const [email, setEmail] = useState('');
     const [selectLicense, setSelectLicense] = useState('Web');
     const [selectType, setSelectType] = useState("S")
+
 
     const handleSelectLicense = (type) => {
         setSelectLicense(type);
@@ -68,6 +67,7 @@ function Shop(){
         try {
             const response = await axios.post(`${API_URL}/create-checkout-session`, {
               priceId: priceId,
+              email: email,
             });
       
             const session = response.data;
@@ -152,7 +152,7 @@ function Shop(){
                 </div>
             </div>
 
-            <input className="email-input" placeholder="Email where will be send the font..." autoComplete="email"></input>
+            <input className="email-input" placeholder="Email where will be send the font..." autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
 
             <div className="btn-shop">
                 <Link>
