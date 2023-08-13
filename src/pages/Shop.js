@@ -5,10 +5,9 @@ import { loadStripe } from "@stripe/stripe-js"
 import Carrousel from "../composents/Carrousel"
 import axios from "axios"
 
-const stripePromise = loadStripe("pk_test_51LOmW7EudbBbgrFHNKTiANb2BTtya9yKwuNWseZoz4j1xCgsuMzj4sc44ixukkDLkFQHcAavndAKsa3qk371BF3I00DgKmbdtM")
+const stripePromise = loadStripe("pk_live_51LOmW7EudbBbgrFHPzgEl2IufdXMxqTumi7uvjfBTDhjWw4traq09LlWuR4exu6TmjgdC5L9a1kDMPMjsjgSSFKA00kNBTCwWE")
 
 function Shop(){
-
     const API_URL = process.env.REACT_APP_SERVER_URL
 
     const downloadDocument = () => {
@@ -36,22 +35,22 @@ function Shop(){
 
 
         const price = [
-            {licence:"Print", type:"Freelance", price:"BUY FOR 75€", id:"price_1LYAipEudbBbgrFH6B8HfKgl"},
-            {licence:"Print", type: "S", price:"BUY FOR 90€", id: "price_1LYAqUEudbBbgrFHIZUmwcOH"},
-            {licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1LYArNEudbBbgrFHb114ipYS"},
-            {licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1LYArpEudbBbgrFH9WaASNC7"},
+            {licence:"Print", type:"Freelance", price:"BUY FOR 75€", id:"price_1NdFFZEudbBbgrFHFIaBR6UN"},
+            {licence:"Print", type: "S", price:"BUY FOR 90€", id: "price_1NdFHKEudbBbgrFHthrawpKL"},
+            {licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1NdFHzEudbBbgrFHvmphRtaw"},
+            {licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1NdFIREudbBbgrFHhBdC4l46"},
             {licence:"Print", type : "XL", price: "CONTACT ME!", id:"CONTACTME"},
 
-            {licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1LYAubEudbBbgrFHBqcHzPXk"},
-            {licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1LYAveEudbBbgrFHoSPt7Pyc"},
-            {licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1LYAy7EudbBbgrFH4Qefvzig"},
-            {licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1LYAyfEudbBbgrFHcOR0aqqJ"},
+            {licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1NdFJUEudbBbgrFHqCASyZWM"},
+            {licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1NdFKEEudbBbgrFHDqaaHqMR"},
+            {licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1NdFKgEudbBbgrFHhcyK4Sxo"},
+            {licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1NdFL2EudbBbgrFHWoWm5zJB"},
             {licence:"Web", type: "XL", price: "CONTACT ME!", id:"CONTACTME"},
 
-            {licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1LYAzdEudbBbgrFHj8mHrSZG"},
-            {licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1LYB0bEudbBbgrFHYaayikoH"},
-            {licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1LYB1NEudbBbgrFHl7uIcFq0"},
-            {licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1LYB1tEudbBbgrFHiPcxaii8"},
+            {licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1NdFMdEudbBbgrFHNupiNdhO"},
+            {licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1NdFNCEudbBbgrFHEJPu5gAP"},
+            {licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1NdFQzEudbBbgrFH8HyY2qOF"},
+            {licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1NdFTpEudbBbgrFHGmULRTav"},
             {licence:"Branding", type: "XL", price: "CONTACT ME!", id:"CONTACTME"}
         ]
 
@@ -63,11 +62,13 @@ function Shop(){
 
 
    const handlePayment = async (priceId) => {
-
+        if(priceId === "CONTACTME"){
+            window.location.href = "mailto:contact@emilievizcano.com"
+        } else {
         try {
-            const response = await axios.post(`${API_URL}/create-checkout-session`, {'Content-Type': 'application/json'}, {
+            const response = await axios.post(`${API_URL}/create-checkout-session`, {
               priceId: priceId,
-              email: email,
+             
             });
       
             const session = response.data;
@@ -82,6 +83,7 @@ function Shop(){
             } catch (error) {
               console.error('Erreur lors de la requête vers le serveur :', error);
             }
+        }
         };
 
 
@@ -152,7 +154,7 @@ function Shop(){
                 </div>
             </div>
 
-            <input className="email-input" placeholder="Email where will be send the font..." autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+            <input required className="email-input" placeholder="Email where will be send the font..." autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
 
             <div className="btn-shop">
                 <Link>

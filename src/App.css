@@ -112,7 +112,7 @@ body{
     font-size: 12px;
     width: 16em;
     margin: 3em 0em;
-    
+    outline: none;
 }
 
 .btn-buy{
@@ -256,15 +256,12 @@ body{
         margin:  4vh 0vw;        
     }
     .email-input{
-        border: none;
-        background-color: #F5F5F5;
         font-size: 12px;
         width: 16em;
         margin: 2em 0em;
     }
     .email-input:focus{
         background-color: #F5F5F5;
-        
     }
     .btn-buy{
         padding: 1.5em 3em;
