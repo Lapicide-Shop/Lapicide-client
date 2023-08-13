@@ -54,5 +54,6 @@
         width: 99vw;
         position: relative;
         z-index: 3;
+        height: 0.2px;
     }
 }
