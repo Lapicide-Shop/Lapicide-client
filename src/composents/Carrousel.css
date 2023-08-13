@@ -33,7 +33,7 @@
     font-size: 12px;
 }
 
-hr{
+.hr-carroussel{
     display: none;
 }
 
@@ -77,10 +77,17 @@ hr{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 0em 5vw ;
+        margin: 1em 5vw ;
         width: 90vw;
     }
     .carrousel-btn a{
         margin: 0em;
+    }
+    .hr-carroussel{
+        display: block;
+        width: 99.9vw;
+        height: 0.1px;
+        background-color: black;
+        margin: 1em 0em;
     }
 }

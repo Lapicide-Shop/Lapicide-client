@@ -68,7 +68,9 @@ const Carrousel = (mouseOverEvent,mouseOutEvent) => {
                         <div className="swiper-pagination"></div>
                         <a type="button" className="swiper-button-next">NEXT</a>
                 </div>
+            <hr className="hr-carroussel"/>
         </div>
+        
         )
     
 }
