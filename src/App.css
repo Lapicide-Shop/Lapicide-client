@@ -263,6 +263,10 @@ body{
         width: 16em;
         margin: 2em 0em;
     }
+    .email-input:focus{
+        background-color: #F5F5F5;
+        
+    }
     .btn-buy{
         padding: 1.5em 3em;
         background-color: black;
@@ -276,6 +280,7 @@ body{
         background-color: #F5F5F5;
         border-radius: 5em;
         font-size: 10px;
+        color: black;
     }
     .btn-shop{
         display: flex;

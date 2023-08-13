@@ -134,11 +134,12 @@ nav{
     .navbar-burger{
         display: block;
         position: absolute;
-        top: 2.5em;
+        top: 1.5em;
         right: 2em;
         cursor: pointer;
-        padding: 0;
+        padding: 1em 0.5em;
         border: 0;
+        background-color: #F5F5F5;
     }
 
     .navbar-burger.open{

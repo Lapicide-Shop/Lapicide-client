@@ -77,10 +77,10 @@ hr{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 0em ;
-        width: 100%;
+        margin: 0em 5vw ;
+        width: 90vw;
     }
     .carrousel-btn a{
-        margin: 0em 2em;
+        margin: 0em;
     }
 }

@@ -65,13 +65,13 @@ function Shop(){
    const handlePayment = async (priceId) => {
 
         try {
-            const response = await axios.post(`${API_URL}/create-checkout-session`, {
+            const response = await axios.post(`${API_URL}/create-checkout-session`, {'Content-Type': 'application/json'}, {
               priceId: priceId,
               email: email,
             });
       
             const session = response.data;
-      
+    
             const stripe = await stripePromise;
             const result = await stripe.redirectToCheckout({
               sessionId: session.id,
