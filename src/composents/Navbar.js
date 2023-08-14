@@ -19,7 +19,7 @@ function Navbar(){
         <nav className={`${openMenu ? 'openNav' : 'closeNav'}`}>
         
                 <div className="nav-Link">
-                    <Link to='/' onClick={closeMenu}>
+                    <Link  to='/' onClick={closeMenu}>
                         <li>TEST</li>
                     </Link>
                     <Link to='/about' onClick={closeMenu}>
@@ -31,21 +31,21 @@ function Navbar(){
                 </div>
                 <div className="social-link">
                     
-                        <Link to="https://www.instagram.com/emilievizcano/">
+                        <Link target="_blank" to="https://www.instagram.com/emilievizcano/">
                         <div className="social">
                             <img className="arrow-nav" src={arrow} alt="arrow-list"/>
                             <li>INSTAGRAM</li>
                         </div>
                         </Link>
                     
-                        <Link to="https://twitter.com/sen_vz">
+                        <Link target="_blank" to="https://twitter.com/sen_vz">
                         <div className="social">
                             <img  className="arrow-nav" src={arrow} alt="arrow-list"/>
                             <li>TWITTER</li>
                         </div>    
                         </Link>
                     
-                        <Link to="https://emilievizcano.com/">
+                        <Link target="_blank" to="https://emilievizcano.com/">
                         <div className="social">
                             <img className="arrow-nav" src={arrow} alt="arrow-list"/>
                             <li>WEBSITE</li>
