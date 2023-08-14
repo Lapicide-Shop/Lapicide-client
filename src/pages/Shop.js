@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js"
 import Carrousel from "../composents/Carrousel"
 import axios from "axios"
 
-const stripePromise = loadStripe(process.env.YOUR_STRIPE_PUBLIC_KEY)
+const stripePromise = loadStripe("pk_live_51LOmW7EudbBbgrFHPzgEl2IufdXMxqTumi7uvjfBTDhjWw4traq09LlWuR4exu6TmjgdC5L9a1kDMPMjsjgSSFKA00kNBTCwWE")
 
 function Shop(){
     const API_URL = process.env.REACT_APP_SERVER_URL
