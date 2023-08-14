@@ -40,21 +40,21 @@ function Shop(){
             {licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1NdFHzEudbBbgrFHvmphRtaw"},
             {licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1NdFIREudbBbgrFHhBdC4l46"},
             {licence:"Print", type : "XL", price: "CONTACT ME!", id:"CONTACTME"},
-            {licence:"Print", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf5OyEudbBbgrFHn3BQcopn"},
+            {licence:"Print", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf5XgEudbBbgrFHjGRhUT2s"},
 
             {licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1NdFJUEudbBbgrFHqCASyZWM"},
             {licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1NdFKEEudbBbgrFHDqaaHqMR"},
             {licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1NdFKgEudbBbgrFHhcyK4Sxo"},
             {licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1NdFL2EudbBbgrFHWoWm5zJB"},
             {licence:"Web", type: "XL", price: "CONTACT ME!", id:"CONTACTME"},
-            {licence:"Web", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf5OyEudbBbgrFHn3BQcopn"},
+            {licence:"Web", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf5XgEudbBbgrFHjGRhUT2s"},
 
             {licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1NdFMdEudbBbgrFHNupiNdhO"},
             {licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1NdFNCEudbBbgrFHEJPu5gAP"},
             {licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1NdFQzEudbBbgrFH8HyY2qOF"},
             {licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1NdFTpEudbBbgrFHGmULRTav"},
             {licence:"Branding", type: "XL", price: "CONTACT ME!", id:"CONTACTME"},
-            {licence:"Branding", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf5OyEudbBbgrFHn3BQcopn"},
+            {licence:"Branding", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf5XgEudbBbgrFHjGRhUT2s"},
 
         ]
 
