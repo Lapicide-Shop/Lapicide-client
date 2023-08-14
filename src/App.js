@@ -10,7 +10,6 @@ import About from "./pages/About"
 import Shop from "./pages/Shop"
 import Cursor from './composents/Cursor';
 import Success from './composents/Success';
-import Cancel from './composents/Cancel';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route path='/about' element={<About /> } />
         <Route path='/shop' element={<Shop />}/>
         <Route path='/success' element={<Success />}/>
-        <Route path='/cancel' element={<Cancel />}/>
       </Routes>
 
       <Navbar />

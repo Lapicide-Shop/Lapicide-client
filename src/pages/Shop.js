@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js"
 import Carrousel from "../composents/Carrousel"
 import axios from "axios"
 
-const stripePromise = loadStripe("pk_live_51LOmW7EudbBbgrFHPzgEl2IufdXMxqTumi7uvjfBTDhjWw4traq09LlWuR4exu6TmjgdC5L9a1kDMPMjsjgSSFKA00kNBTCwWE")
+const stripePromise = loadStripe(process.env.YOUR_STRIPE_PUBLIC_KEY)
 
 function Shop(){
     const API_URL = process.env.REACT_APP_SERVER_URL
@@ -40,18 +40,22 @@ function Shop(){
             {licence:"Print", type: "M", price:"BUY FOR 170€", id:"price_1NdFHzEudbBbgrFHvmphRtaw"},
             {licence:"Print", type: "L", price:"BUY FOR 225€", id:"price_1NdFIREudbBbgrFHhBdC4l46"},
             {licence:"Print", type : "XL", price: "CONTACT ME!", id:"CONTACTME"},
+            {licence:"Print", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf45GEudbBbgrFH37lFtNtv"},
 
-            {licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1NdFJUEudbBbgrFHqCASyZWM"},
-            {licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1NdFKEEudbBbgrFHDqaaHqMR"},
-            {licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1NdFKgEudbBbgrFHhcyK4Sxo"},
-            {licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1NdFL2EudbBbgrFHWoWm5zJB"},
+            {licence:"Web", type: "Freelance", price:"BUY FOR 90€", id: "price_1NeyYyEudbBbgrFHVljRMSxp"},
+            {licence:"Web", type: "S", price:"BUY FOR 120€", id:"price_1NeyYGEudbBbgrFHYiDYa6yV"},
+            {licence:"Web", type: "M", price:"BUY FOR 190€", id:"price_1NeyXOEudbBbgrFHYS6FObuu"},
+            {licence:"Web", type: "L", price:"BUY FOR 250€", id:"price_1NeyWgEudbBbgrFHYgJ4s66L"},
             {licence:"Web", type: "XL", price: "CONTACT ME!", id:"CONTACTME"},
+            {licence:"Web", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf45GEudbBbgrFH37lFtNtv"},
 
             {licence:"Branding", type: "Freelance", price:"BUY FOR 130€", id:"price_1NdFMdEudbBbgrFHNupiNdhO"},
             {licence:"Branding", type: "S", price:"BUY FOR 260€", id:"price_1NdFNCEudbBbgrFHEJPu5gAP"},
             {licence:"Branding", type: "M", price:"BUY FOR 780€", id:"price_1NdFQzEudbBbgrFH8HyY2qOF"},
             {licence:"Branding", type: "L", price:"BUY FOR 1430€", id:"price_1NdFTpEudbBbgrFHGmULRTav"},
-            {licence:"Branding", type: "XL", price: "CONTACT ME!", id:"CONTACTME"}
+            {licence:"Branding", type: "XL", price: "CONTACT ME!", id:"CONTACTME"},
+            {licence:"Branding", type: "XXXL", price:"BUY FOR 0€", id:"price_1Nf45GEudbBbgrFH37lFtNtv"},
+
         ]
 
         
@@ -152,6 +156,10 @@ function Shop(){
                 <div className={`radio-option ${selectType === "XL" && "selected"}`} onClick={() => handleTypeChange('XL')}>
                     XL license ({">"} 20 employees)
                 </div>
+                <div className={`radio-option ${selectType === "XXXL" && "selected"}`} onClick={() => handleTypeChange('XXXL')}>
+                    Test de Zinzinerie
+                </div>
+
             </div>
 
             <input required className="email-input" placeholder="Email where will be send the font..." autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
