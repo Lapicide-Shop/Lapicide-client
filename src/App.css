@@ -297,9 +297,13 @@ body{
     .popUp-info, .popUp-info-3 {
         display: none;
         left: -500%;
+        top: -200%;
+        width: 40vw;
     }
     .popUp-info-3 {
-        left: -1000%;
+        left: -500%;
+        top: -200%;
+        width: 50vw;
     }
 
 }
