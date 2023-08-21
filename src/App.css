@@ -151,7 +151,7 @@ body{
     left: 0%;
     z-index: 5;
     height: auto;
-    width: 15em;
+    width: 15vw;
 }
 .popUp-info-3{
     display: none;
@@ -160,7 +160,7 @@ body{
     left: 0%;
     z-index: 5;
     height: auto;
-    width: 20em;
+    width: 20vw;
 }
 .info-btn{
     width: 15px;
