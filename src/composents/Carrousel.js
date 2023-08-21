@@ -54,15 +54,19 @@ const Carrousel = (mouseOverEvent,mouseOutEvent) => {
                         onSwiper={(swiper) => console.log(swiper)}
                         
                     >
-                    {images.map((image, i ) => (
+                    { images=== undefined ? (
+                        <img className="carrousel-image" src={image1} alt="remplacant" />
+                    ) : (
+                    images.map((image, i ) => (
                         
                             <SwiperSlide >
                                 <img key={i} className="carrousel-image" src={image} alt="image-caroussel"/>
                             </SwiperSlide>
                         
-                    ))}          
-
+                    ))         
+                )}
                 </Swiper>
+                
                 <div className="carrousel-btn">
                         <a type="button" className="swiper-button-prev">PREVIOUS</a>
                         <div className="swiper-pagination"></div>
