@@ -125,9 +125,11 @@ body{
     background-color: black;
     color: white;
     border-radius: 5em;
+    border: none;
     font-size: 1.2vh;
     margin-right: 2em;
     border: solid black;
+
 }
 .btn-trial{
     padding: 1.5em 4em;
@@ -280,18 +282,13 @@ body{
     }
     .btn-buy{
         padding: 1.5em 3em;
-        background-color: black;
-        color: white;
-        border-radius: 5em;
         font-size: 10px;
-        margin-right: 2em;
+        border: 1px solid black;
+        margin-bottom: 3em;
     }
     .btn-trial{
         padding: 1.5em 3em;
-        background-color: #F5F5F5;
-        border-radius: 5em;
         font-size: 10px;
-        color: black;
     }
 
     .popUp-info, .popUp-info-3 {
