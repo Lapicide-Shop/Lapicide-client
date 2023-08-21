@@ -25,6 +25,7 @@
     height: 0.5px;
     background-color: black;
     margin-bottom: 3vh;
+    border: none;
 }
 .lapicide{
     font-family: 'Lapicide', sans-serif;

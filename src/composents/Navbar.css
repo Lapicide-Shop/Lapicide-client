@@ -16,6 +16,7 @@
     justify-content: space-between;
     width: 20vw;
     padding: 3vh 0vw;
+    font-size: 10vw;
     position: fixed;
     bottom: 0;
 }
@@ -73,7 +74,7 @@
     width: 99.9vw;
     height: 0.2px;
     background-color: black;
-    margin: 2.5vh 0em 10vh;
+    margin: 2.5vh 0em 9vh;
     position: fixed;
     bottom: 0;
     border: none;
