@@ -17,6 +17,7 @@ body{
 .add-carrousel{
     display: flex;
     flex-direction: row;
+    height: 74vh;
 }
 
 /* Homepage Desktop*/
@@ -131,28 +132,38 @@ body{
     font-size: 10px;
     border: 0.1px black solid;
 }
+.image-container{
+    position: relative;
+    display: inline-block;
+}
 .btn-shop{
     display: flex;
     flex-direction: row;
 }
 .popUp-info {
     display: none;
-    background-color: black;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10em;
-    height: 5em;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: -300%;
+    left: 0%;
+    z-index: 5;
+    height: auto;
+    width: 15em;
+}
+.popUp-info-3{
+    display: none;
+    position: absolute;
+    top: -280%;
+    left: 0%;
+    z-index: 5;
+    height: auto;
+    width: 20em;
 }
 .info-btn{
     width: 15px;
     height: 15px;
     margin-left: 0.5em;
 }
-.info-btn:hover .popUp-info{
+.image-container:hover .popUp-info, .image-container:hover .popUp-info-3{
     display: block;
 }
 .radio-option.selected{
@@ -278,30 +289,15 @@ body{
         font-size: 10px;
         color: black;
     }
-    .btn-shop{
-        display: flex;
-        flex-direction: row;
-    }
-    .popUp-info {
+
+    .popUp-info, .popUp-info-3 {
         display: none;
-        background-color: black;
-        color: white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 10em;
-        height: 5em;
-        justify-content: center;
-        align-items: center;
+        left: -500%;
     }
-    .info-btn{
-        width: 15px;
-        height: 15px;
-        margin-left: 0.5em;
+    .popUp-info-3 {
+        left: -1000%;
     }
-    .info-btn:hover .popUp-info{
-        display: block;
-    }
+
 }
 @media (max-width: 600px) and (min-width: 300px){
     *{

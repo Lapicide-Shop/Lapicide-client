@@ -4,6 +4,10 @@ import { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import Carrousel from "../composents/Carrousel"
 import axios from "axios"
+import hover1 from "../assets/hover1.png"
+import hover2 from "../assets/hover2.png"
+import hover3 from "../assets/hover3.png"
+
 
 const stripePromise = loadStripe("pk_live_51LOmW7EudbBbgrFHPzgEl2IufdXMxqTumi7uvjfBTDhjWw4traq09LlWuR4exu6TmjgdC5L9a1kDMPMjsjgSSFKA00kNBTCwWE")
 
@@ -109,34 +113,28 @@ function Shop(){
                     <div  className={`radio-option ${selectLicense === "Print" && "selected"}`} onClick={() => handleSelectLicense('Print')}>
                         Desktop & Print   
                     </div>
-                    <img className="info-btn" src={info} alt="info-popUp"/>
-                    <div className="popUp-info">
-                        <p>You can use it for print.
-                    WARNING: You CAN’T post on social media 
-                    (IG, TW, FB etc. with this licence).</p>
+                    <div className="image-container">
+                        <img className="info-btn" src={info} alt="info-popUp"/> 
+                        <img className="popUp-info" src={hover1} alt="hover-1" />
                     </div>
                 </div>
                 <div  className="link-info">
                     <div className={`radio-option ${selectLicense === "Web" && "selected"}`} onClick={() => handleSelectLicense('Web')}>
                         Web (socials + apps)
                     </div>
-                    <img className="info-btn" src={info} alt="info-popUp"/>
-                    <div className="popUp-info">
-                        <p>You can use it like Websites uses,
-                         socials medias like Instagram, Snapchat, Facebook and Youtube.
-                        </p>
+                    <div className="image-container">
+                        <img className="info-btn" src={info} alt="info-popUp"/>
+                        <img className="popUp-info" src={hover2} alt="hover-2"/>
                     </div>
                 </div>
                 <div  className="link-info">
                     <div className={`radio-option ${selectLicense === "Branding" && "selected"}`} onClick={() => handleSelectLicense('Branding')}>
                         Branding (desktop + web + apps)
-                    </div>            
-                    <img className="info-btn" src={info} alt="info-popUp"/>
-                    <div className="popUp-info">
-                        <p>You can use it for visual identities 
-                        (Logos, Branding, Monograms and/or any distinctive sign), 
-                        but also on social media and websites uses, at the exception of TV, Plateform and Cinema.</p>
                     </div>
+                    <div className="image-container">          
+                        <img className="info-btn" src={info} alt="info-popUp"/>
+                        <img className="popUp-info-3" src={hover3} alt="hover-3"/>
+                    </div>  
                 </div>
             </div>
 
