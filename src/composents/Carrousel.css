@@ -8,7 +8,7 @@
     object-fit: cover;
     width: 46vw;
     height: 70vh;
-    margin-left: 1.5em;
+    margin-left: 1.5vw;
     transition: transform 0.5s ease;
 }
 
