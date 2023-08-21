@@ -113,13 +113,14 @@
     }
     .nav-Link{
         flex-direction: column;
-        padding-bottom: 3em;
+        padding-bottom: 2em;
         width: 10em;
+        position: relative;
     }
     .nav-Link li{
         list-style-type: square;
         list-style-type: style color #949494;
-        padding: 0.3em 0em;
+        padding: 0.5em 0em;
     }
     .arrow-nav{
         width: 15px;
@@ -129,13 +130,14 @@
     }
     .social-link{
         flex-direction: column;
+        position: relative;
     }
     .social{
         display: flex;
     }
     .social li{
         list-style: none;
-        padding: 0.3em 0em;
+        padding: 0.5em 0em;
 
     }
 

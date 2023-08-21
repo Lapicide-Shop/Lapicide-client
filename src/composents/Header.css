@@ -44,6 +44,7 @@
     }
     .author-name{
         display: none;
+
     }
     .header{
         justify-content: start;
@@ -58,5 +59,8 @@
         height: 0.1px;
         background-color: black;
         border: none;
+    }
+    .lapicide{
+        padding-left: 0.5em;
     }
 }
