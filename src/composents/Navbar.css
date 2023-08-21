@@ -14,11 +14,12 @@
 .nav-Link{
     display: flex;
     justify-content: space-between;
-    width: 20vw;
-    padding: 3vh 0vw;
-    font-size: 10vw;
+    width: 25vw;
+    padding: 1.5em 1.5vw;
     position: fixed;
     bottom: 0;
+    left: 0;
+    
 }
 
 .nav-Link a{
@@ -42,7 +43,7 @@
     display: flex;  
     justify-content: space-between;
     width: 25vw;
-    padding: 3vh 1.5vw;
+    padding: 1.5em 1.5vw;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -74,7 +75,7 @@
     width: 99.9vw;
     height: 0.2px;
     background-color: black;
-    margin: 8vh 0em ;
+    margin: 4em 0em ;
     position: fixed;
     bottom: 0;
     border: none;
