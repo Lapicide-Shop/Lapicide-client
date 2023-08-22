@@ -7,7 +7,7 @@ import axios from "axios"
 import hover1 from "../assets/hover1.png"
 import hover2 from "../assets/hover2.png"
 import hover3 from "../assets/hover3.png"
-
+import trial from "../font/Lapicide_TRIAL.otf"
 
 const stripePromise = loadStripe("pk_live_51LOmW7EudbBbgrFHPzgEl2IufdXMxqTumi7uvjfBTDhjWw4traq09LlWuR4exu6TmjgdC5L9a1kDMPMjsjgSSFKA00kNBTCwWE")
 
@@ -15,10 +15,9 @@ function Shop(){
     const API_URL = process.env.REACT_APP_SERVER_URL
 
     const downloadDocument = () => {
-        const url = process.env.PUBLIC_URL + `/font/Lapicide_TRIAL.otf`; // Remplacez par le nom de votre document avec l'extension appropriée
     
         const link = document.createElement('a');
-        link.href = url;
+        link.href = trial;
         link.download = "Lapicide_TRIAL.otf";
         link.click();
     };
@@ -154,9 +153,9 @@ function Shop(){
                 <div className={`radio-option ${selectType === "XL" && "selected"}`} onClick={() => handleTypeChange('XL')}>
                     XL license ({">"} 20 employees)
                 </div>
-                <div className={`radio-option ${selectType === "XXXL" && "selected"}`} onClick={() => handleTypeChange('XXXL')}>
+                {/* <div className={`radio-option ${selectType === "XXXL" && "selected"}`} onClick={() => handleTypeChange('XXXL')}>
                     Test de Zinzinerie
-                </div>
+                </div> */}
 
             </div>
 
