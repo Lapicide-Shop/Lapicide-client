@@ -13,7 +13,7 @@ const stripePromise = loadStripe("pk_live_51LOmW7EudbBbgrFHPzgEl2IufdXMxqTumi7uv
 
 function Shop(){
     const API_URL = process.env.REACT_APP_SERVER_URL
-
+    
     const downloadDocument = () => {
     
         const link = document.createElement('a');

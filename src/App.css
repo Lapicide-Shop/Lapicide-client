@@ -20,7 +20,7 @@ body{
 .add-carrousel{
     display: flex;
     flex-direction: row;
-    height: 74vh;
+    height:auto;
 }
 
 /* Homepage Desktop*/
